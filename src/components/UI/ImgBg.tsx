@@ -46,7 +46,7 @@ export const ImgBg = () => {
   return (
     <div
       ref={containerRef}
-      className="absolute flex flex-col justify-between z-[-10] w-full h-[calc(100vh-72px)] overflow-clip sm:opacity-90 opacity-60 backdrop-blur-3xl gap-y-4 py-20 blur-2xl saturate-150"
+      className="absolute flex flex-col justify-between z-[-10] w-full h-[calc(100vh-72px)] overflow-clip sm:opacity-90 opacity-6 0 backdrop-blur-3xl gap-y-4 py-20 blur-2xl saturate-150"
     >
       <div
         ref={row1Ref}
