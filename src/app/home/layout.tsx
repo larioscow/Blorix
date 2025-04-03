@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import './globals.css';
-import '@fontsource-variable/inter';
+import { Header } from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'Blorix | Blog de viajes',
@@ -13,5 +12,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <html lang="es">{children}</html>;
+  return (
+    <body>
+      <Header />
+      {children}
+    </body>
+  );
 }
