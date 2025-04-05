@@ -2,45 +2,53 @@
 
 import { useEffect, useRef } from 'react';
 
-const animateScroll = (
-  ref: React.RefObject<HTMLDivElement | null>,
-  containerRef: React.RefObject<HTMLDivElement | null>,
-  direction: number,
-  scrollAmountRef: { current: number }
-) => {
-  const speed = 1;
-
-  const step = () => {
-    if (ref.current && containerRef.current) {
-      const containerWidth = containerRef.current.getBoundingClientRect().width;
-      const rowWidth = ref.current.getBoundingClientRect().width;
-
-      scrollAmountRef.current += speed;
-      ref.current.style.transform = `translateX(${
-        direction * scrollAmountRef.current
-      }px)`;
-
-      // Reset position when the row moves completely out of the container
-      if (scrollAmountRef.current >= rowWidth + containerWidth) {
-        scrollAmountRef.current = 0;
-      }
-    }
-    requestAnimationFrame(step);
-  };
-  step();
-};
-
 export const ImgBg = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const row1Ref = useRef<HTMLDivElement | null>(null);
   const row2Ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const animateScroll = (
+      ref: React.RefObject<HTMLDivElement | null>,
+      direction: number,
+      scrollAmountRef: { current: number }
+    ) => {
+      const speed = 0.5;
+
+      const step = () => {
+        if (ref.current && containerRef.current) {
+          const containerWidth =
+            containerRef.current.getBoundingClientRect().width;
+          const rowWidth = ref.current.getBoundingClientRect().width;
+
+          scrollAmountRef.current += speed;
+          ref.current.style.transform = `translateX(${
+            direction * scrollAmountRef.current
+          }px)`;
+
+          // Reset position when the row moves completely out of the container
+          if (
+            direction > 0 &&
+            scrollAmountRef.current >= rowWidth + containerWidth
+          ) {
+            scrollAmountRef.current = 0;
+          } else if (
+            direction < 0 &&
+            scrollAmountRef.current >= rowWidth + containerWidth
+          ) {
+            scrollAmountRef.current = 0;
+          }
+        }
+        requestAnimationFrame(step);
+      };
+      step();
+    };
+
     const row1ScrollAmount = { current: 0 };
     const row2ScrollAmount = { current: 0 };
 
-    animateScroll(row1Ref, containerRef, 1, row1ScrollAmount);
-    animateScroll(row2Ref, containerRef, -1, row2ScrollAmount);
+    animateScroll(row1Ref, 1, row1ScrollAmount);
+    animateScroll(row2Ref, -1, row2ScrollAmount);
   }, []);
 
   return (
