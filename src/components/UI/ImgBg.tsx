@@ -13,7 +13,7 @@ export const ImgBg = () => {
       direction: number,
       scrollAmountRef: { current: number }
     ) => {
-      const speed = 0.5;
+      const speed = 5;
 
       const step = () => {
         if (ref.current && containerRef.current) {
