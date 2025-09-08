@@ -1,17 +1,9 @@
 export const ImgBg = () => {
   return (
-    <div className="absolute flex flex-col justify-between lg:justify-center lg:gap-y-6 z-[-10] w-full h-[calc(100vh-72px)] overflow-clip opacity-90 lg:opacity-70 backdrop-blur-3xl gap-y-4 py-20 blur-2xl saturate-150">
-      <div className="flex blur-2xl gap-x-72 h-3 lg:h-64 lg:gap-x-[700px] w-fit">
-        <div className="w-xl  h-full bg-blue-600"></div>
-        <div className="w-xl  h-full bg-indigo-600"></div>
-        <div className="w-xl  h-full bg-rose-600"></div>
-        <div className="w-xl  h-full bg-amber-600"></div>
-      </div>
-      <div className="flex blur-2xl gap-x-72 h-3 lg:h-64 lg:gap-x-[700px] w-fit">
-        <div className="w-xl  h-full bg-blue-600"></div>
-        <div className="w-xl  h-full bg-indigo-600"></div>
-        <div className="w-xl  h-full bg-rose-600"></div>
-        <div className="w-xl  h-full bg-amber-600"></div>
+    <div className="grid grid-cols-1 place-items-center absolute top-0 z-[-10] w-full overflow-clip h-screen saturate-150 blur">
+      <div className="bg-blue-600 rounded-full size-[100vw] scale-[125%] md:scale-[100%] -translate-x-[50%] -translate-y-[100%] md:-translate-y-[50%] absolute"></div>
+      <div className="bg-amber-600 rounded-full size-[100vw] scale-[110%] md:scale-[100%]  translate-x-7/12 translate-y-5/12 md:translate-y-6/12  absolute">
+        <div className="bg-black rounded-full size-[100vw] scale-[60%]"></div>
       </div>
     </div>
   );

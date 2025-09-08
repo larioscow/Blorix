@@ -18,11 +18,11 @@ export const Header = () => {
   return (
     <header
       className={clsx(
-        'fixed top-0 w-full transition-all duration-300 z-10',
+        'fixed top-0 w-full transition-all duration-300 z-10 h-[72px]',
         scrolled ? 'bg-black/80 backdrop-blur-md shadow-md' : 'bg-transparent'
       )}
     >
-      <nav className="flex justify-between items-center text-white py-4 px-6">
+      <nav className="flex justify-between items-center text-white py-4 px-6 h-full">
         <span className="text-2xl font-bold">Blorix</span>
         <button className="bg-neutral-200 text-black font-bold px-4 py-2 rounded-md hover:bg-neutral-100 cursor-pointer transition-colors duration-200">
           Suscribirme
