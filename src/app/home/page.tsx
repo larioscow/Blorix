@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main className="px-6">
-      <section className="w-full max-w-xl mx-auto flex flex-col items-center justify-center h-[calc(100vh-72px)] mt-[72px]">
+      <section className="w-full max-w-xl mx-auto flex flex-col items-center justify-center h-[calc(100dvh-72px)] mt-[72px]">
         <p className="text-lg sm:text-xl md:text-2xl text-center mb-6 opacity-90">
           <strong>Blorix</strong> te brinda las herramientas para que tu próxima
           aventura sea inolvidable.
