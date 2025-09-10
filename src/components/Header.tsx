@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,9 +25,12 @@ export const Header = () => {
     >
       <nav className="flex justify-between items-center text-white py-4 px-6 h-full">
         <span className="text-2xl font-bold">Blorix</span>
-        <button className="bg-neutral-200 text-black font-bold px-4 py-2 rounded-md hover:bg-neutral-100 cursor-pointer transition-colors duration-200">
-          Suscribirme
-        </button>
+        <Link
+          href="/contacto"
+          className="bg-neutral-200 text-black font-bold px-4 py-2 rounded-md hover:bg-neutral-100 cursor-pointer transition-colors duration-200"
+        >
+          Contacto
+        </Link>
       </nav>
     </header>
   );
